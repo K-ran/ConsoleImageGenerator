@@ -3,6 +3,8 @@
 #include <sys/ioctl.h>
 #include <iostream>
 
+#define WIDTH_SCALING_FACTOR 2
+
 void consoleResize(const Mat &src, Mat &des)
 {
     winsize w;
@@ -28,6 +30,8 @@ void consoleResize(const Mat &src, Mat &des)
     }
 
     std::cout<<"RowsFinal: "<<finalRows<<" ColsFinal "<<finalCols<<std::endl;
-    resize(src, des, Size(finalCols,finalRows));
+    Mat intermediateImage;
+    resize(src,intermediateImage, Size(finalCols,finalRows));
+    resize(intermediateImage, des, Size(), WIDTH_SCALING_FACTOR, 1);
 }
 
