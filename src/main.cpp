@@ -57,6 +57,11 @@ int main(int argc, char** argv )
     {
         hscale = args::get(scaleH);
     }
+    if(wscale<=0.0f || hscale <=0.0f)
+    {
+        cout<<"ERROR: Scaling factors cannot be negative or zero!"<<endl;
+        return -1;
+    }
     Mat image, gImage, resizedImage;
     image = imread( argv[1], 1 );
     if ( !image.data )
