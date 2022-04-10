@@ -1,7 +1,7 @@
 # ConsoleImageGenerator
 This application generates an ASCII art from the an image file.
 
-## Build Steps:
+## Build Steps[On ubuntu 20.04]:
 1. git clone https://github.com/K-ran/ConsoleImageGenerator/
 2. cd ConsoleImageGenerator
 3. git submodule update --init
