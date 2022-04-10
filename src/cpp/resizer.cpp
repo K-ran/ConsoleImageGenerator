@@ -11,8 +11,6 @@ void consoleResize(const Mat &src, Mat &des, float wscale, float hscale)
     int finalRows,finalCols;
     cRows = w.ws_row;
     cCols = w.ws_col;
-    std::cout<<"Rows: "<<cRows<<" Cols "<<cCols<<std::endl;
-    std::cout<<"RowsImage: "<<src.size().height<<" ColsImage "<<src.size().width<<std::endl;
     float imgRatioRTH = (float)src.size().width/(float)src.size().height;
     
     //if row is preserved
@@ -27,7 +25,6 @@ void consoleResize(const Mat &src, Mat &des, float wscale, float hscale)
         finalCols = cCols;
     }
 
-    std::cout<<"RowsFinal: "<<finalRows<<" ColsFinal "<<finalCols<<std::endl;
     Mat intermediateImage;
     resize(src,intermediateImage, Size(finalCols,finalRows));
     resize(intermediateImage, des, Size(), wscale, hscale);
