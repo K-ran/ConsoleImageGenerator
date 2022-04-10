@@ -7,12 +7,13 @@ using namespace cv;
 using namespace std;
 
 char asciiMap[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'."; 
+//char asciiMap[] = " .:-=+*#%@"; 
 
 char remap(uchar inp)
 {
     inp = 255-inp;
     int remapIndex = int((inp/256.0)*(sizeof(asciiMap)/sizeof(char)));
-    cout<<"Mapping: "<<inp<<" -> "<<remapIndex<<endl;
+    // cout<<"Mapping: "<<inp<<" -> "<<remapIndex<<endl;
     return asciiMap[remapIndex];
 }
 

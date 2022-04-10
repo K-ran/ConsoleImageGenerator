@@ -4,6 +4,6 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
-void consoleResize(const Mat &src, Mat &dest);
+void consoleResize(const Mat &src, Mat &des, float wscale, float hscale);
 
 #endif
